@@ -1,5 +1,5 @@
 body{
-    background-image: url('imagens/plano-fundo.png');
+    background-image: url('../imagens/plano-fundo.png');
     background-size: auto;
     background-position: center;
     background-repeat: repeat;
@@ -110,7 +110,7 @@ textarea:hover{
 
 
 .plano-fundo{
-    background-image: url(imagens/retangulo2.png);
+    background-image: url(../imagens/retangulo2.png);
     background-size: contain;
     display: flex;
     flex-direction: column;
