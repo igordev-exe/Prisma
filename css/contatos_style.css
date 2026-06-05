@@ -1,0 +1,112 @@
+
+body{
+
+    background-image: url('../imagens/contatos/Contatos.png');
+    background-size:100% 100%;
+    background-attachment: fixed;
+   border: none;
+}
+
+.logo{
+    img{
+        width: 90px;
+        height: 90px;
+        position:fixed;
+        bottom:475px;
+        left:30px;
+    }
+}
+
+.botoes{
+.inicio{
+      width:70px;
+      height:32px;
+      position:relative;
+      left:350px;
+      top:15px;
+}
+    .cursos{
+        width:100px;
+        height:27px;
+        position:relative;
+        left:390px;
+        top:15px;
+    }
+
+    .quemsomos{
+        width:120px;
+        height:28px;
+        position:relative;
+        left:430px;
+        top:15px;
+    }
+
+    .depoimentos{
+        width:120px;
+        height:28px;
+        position:relative;
+        left:470px;
+        top:14px;
+    }
+
+    .contatos{
+        width:120px;
+        height:26px;
+        position:relative;
+        left:510px;
+        top:15px;
+    }
+}
+
+.personagens{
+    img{
+        
+        width: 70%;
+        height: 450px;
+        position:fixed;
+        left: 170px;
+        top: 120px;
+    }
+}
+
+.contate{
+    img{
+        width:340px;
+        height:80px;
+        position:fixed;
+        left:430px;
+        top:400px;
+    }
+}
+
+.caixas{
+    .caixa2{
+
+        height:90px;
+        position:fixed;
+        left:100px;
+        top:230px;
+    }
+
+    .caixa{
+
+        height:90px;
+        position:fixed;
+        left:100px;
+        top:120px;
+    }
+
+    .caixa3{
+        height:90px;
+        position:fixed;
+        left:670px;
+        top:120px;
+    }
+
+    .caixa4{
+        height:90px;
+        position:fixed;
+        left:670px;
+        top:230px;
+    }
+}
