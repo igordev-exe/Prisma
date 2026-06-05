@@ -18,7 +18,7 @@ body {
     width: 1440px;
     height: 1024px;
     position: relative;
-    background-image: url('img/fundo.png');
+    background-image: url('../imagens/quem_somos/fundo.png');
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -151,7 +151,7 @@ img {
         left: 0 !important;
         top: 0 !important;
         transform: none !important;
-        background-image: url('img/fundo.png') !important;
+        background-image: url('../imagens/quem_somos/fundo.png') !important;
         background-size: cover !important;
         background-position: center !important;
         overflow: hidden !important;
