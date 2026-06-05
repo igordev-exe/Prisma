@@ -1,90 +1,119 @@
-*{
+/* Reset básico para remover margens padrão do navegador */
+* {
     margin: 0;
-    
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
+body {
     background-image: url("contatos.jpeg");
-    
-    background-size: 100% 100%;
+    /* Usar cover evita que a imagem fique esticada/deformada */
+    background-size: cover; 
+    background-position: center;
     background-attachment: fixed;
-}
-.botoes{
-.inicio{
-      width:70px;
-      height:32px;
-      position:relative;
-      left:350px;
-      top:15px;
-}
-    .cursos{
-        width:100px;
-        height:27px;
-        position:relative;
-        left:390px;
-        top:15px;
-    }
-
-    .quemsomos{
-        width:120px;
-        height:28px;
-        position:relative;
-        left:430px;
-        top:15px;
-    }
-
-    .depoimentos{
-        width:120px;
-        height:28px;
-        position:relative;
-        left:470px;
-        top:14px;
-    }
-
-    .contatos{
-        width:120px;
-        height:26px;
-        position:relative;
-        left:510px;
-        top:15px;
-    }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.testemunhos{
-    .caixa1{
-        width:1150px;
-        height:140px;
-        position:relative;
-        left:30px;
-        top:80px;
+/* =========================================
+   LAYOUT DESKTOP
+========================================= */
+
+.cabecalho {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 80px; 
+}
+
+.logo img {
+    width: 110px;
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.5)); 
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    gap: 25px; 
+}
+
+.botoes a img {
+    height: 30px; 
+    width: auto;
+    transition: transform 0.2s ease; 
+}
+
+.botoes a:hover img {
+    transform: scale(1.1); 
+}
+
+.testemunhos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; 
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.testemunhos img {
+    width: 100%;
+    max-width: 1000px; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.6); 
+}
+
+/* =========================================
+   LAYOUT TABLET (Telas menores que 768px)
+========================================= */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 15px;
     }
 
-    .caixa2{
-        width:1150px;
-        height:140px;
-        position:relative;
-        left:30px;
-        top:80px;
+    .botoes {
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 15px;
     }
 
-    .caixa3{
-        width:1150px;
-        height:140px;
-        position:relative;
-        left:30px;
-        top:80px;
+    .botoes a img {
+        height: 22px; 
+    }
 
+    .testemunhos {
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .testemunhos img {
+        width: 95%; 
+        height: auto; /* Mantém a altura automática para não distorcer no tablet */
     }
 }
 
-.logo{
-
-    img{
-        width: 90px;
-        height: 90px;
-        position:fixed;
-        bottom:475px;
-        left:30px;
+/* =========================================
+   LAYOUT CELULAR (Telas menores que 480px)
+========================================= */
+@media (max-width: 480px) {
+    .testemunhos {
+        gap: 20px; /* Dá um espacinho confortável entre as caixas */
+    }
+    
+    .testemunhos img {
+        width: 95%; 
+        height: 140px; /* AQUI ESTÁ A MÁGICA: Forçamos uma altura maior para preencher a tela */
+        object-fit: fill; /* Permite que a imagem estique um pouco na vertical para cobrir o espaço */
     }
 }
