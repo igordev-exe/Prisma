@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prisma Cursos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Tiny5&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/incio_style.css"/>
+  </head>
+  <body>
+    <div id="containerPai">
+
+      <div class="overlayDialogo" id="overlayDialogo"></div>
+
+      <header class="headerPrisma">
+        <img src="../imagens/logoPrisma.svg" alt="Logo Prisma" class="logoPrisma">
+        <nav>
+          <ul class="paginasPrisma">
+            <li class="letrasHeader">Inicio</li>
+            <li class="letrasHeader">Cursos</li>
+            <li class="letrasHeader">Quem Somos</li>
+            <li class="letrasHeader">Depoimentos</li>
+            <li class="letrasHeader">Contatos</li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="heroSection">
+        <div class="heroConteudo">
+          <h1 class="heroTitulo">Profissionalize-se com cursos de ponta.</h1>
+          <p class="heroSubtitulo">Aprenda de forma rápida e efetiva cursos voltados ao mercado.</p>
+          <div class="heroBadges">
+            <span class="badge">
+              <img src="../imagens/iconeEnsinoHibrido.svg" alt="" class="iconesBadge">
+              Ensino Híbrido
+            </span>
+            <span class="badge">
+              <img src="../imagens/iconeReal_Aprendizado.svg" alt="" class="iconesBadge">
+              Aprendizado Real
+            </span>
+          </div>
+          <button class="heroBtn">
+            <span class="heroBtnTexto">EXPLORAR CURSOS</span>
+            <span class="heroBtnDivisor"></span>
+            <span class="heroBtnIcone">
+              <img src="../imagens/iconeMonitor.svg" alt="" class="iconesBtn">
+            </span>
+          </button>
+        </div>
+        <div class="heroImagem">
+          <img src="../imagens/magoCajado.svg" alt="Mago Prisma" id="magoImg">
+        </div>
+      </main>
+
+      <div class="dialogoMago" id="dialogoMago">
+        <img src="../imagens/caixas_dialogo_img.svg" class="dialogoFundo" alt="">
+        <div class="dialogoConteudo">
+          <p class="dialogoTexto" id="dialogoTexto"></p>
+          <button class="dialogoSeta" id="dialogoProximo">
+            <img src="../imagens/arrow_caixaDialogo.svg" class="arrowIcone" alt="próximo">
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <script src="../js/tela_inicial.js"></script>
+  </body>
+</html>

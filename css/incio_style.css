@@ -1,0 +1,411 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    font-family: 'Source Serif 4', serif;
+}
+
+#containerPai {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: #151a28;
+    background-image: url('../imagens/img_parede_castelo.jpg');
+    background-size: 100% 100%;
+}
+
+/* ===========================
+   OVERLAY ESCURO
+   =========================== */
+.overlayDialogo {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 3, 16, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    transition: opacity 0.5s ease;
+}
+
+.magoGrande .overlayDialogo {
+    opacity: 1;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
+.headerPrisma {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    position: relative;
+    z-index: 200;
+}
+
+.logoPrisma {
+    height: 88px;
+    width: 88px;
+}
+
+.paginasPrisma {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.letrasHeader {
+    font-family: 'Tiny5', sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Inicio */
+.letrasHeader:nth-child(1) {
+    background: linear-gradient(90deg, #900DE7, #E3E3E3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cursos */
+.letrasHeader:nth-child(2) {
+    background: linear-gradient(90deg, #CBC9C9, #049C13);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Quem Somos  */
+.letrasHeader:nth-child(3) {
+    background: linear-gradient(90deg, #FFFFFF, #656262, #EF1414);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Depoimentos */
+.letrasHeader:nth-child(4) {
+    background: linear-gradient(90deg, #FFFFFF, #1307FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Contatos */
+.letrasHeader:nth-child(5) {
+    background: linear-gradient(90deg, #FFFFFF, #FBFF00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.heroSection {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0 60px;
+    position: relative;
+}
+
+.heroConteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 55%;
+    position: relative;
+    z-index: 2;
+}
+
+.heroTitulo {
+    font-family: 'Source Serif 4', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #BFB8FF;
+    text-decoration: underline;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.heroSubtitulo {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    color: #D8D8D8;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.heroBadges {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.95rem;
+    text-decoration: underline;
+}
+
+.iconesBadge {
+    width: 22px;
+    height: 22px;
+}
+
+.heroBtn {
+    display: flex;
+    align-items: stretch;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Source Serif 4', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: fit-content;
+    padding: 0;
+    overflow: hidden;
+}
+
+.heroBtnTexto {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.heroBtnDivisor {
+    width: 2px;
+    background-color: white;
+    align-self: stretch;
+}
+
+.heroBtnIcone {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+}
+
+.iconesBtn {
+    width: 22px;
+    height: 22px;
+}
+
+.heroBtn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.heroImagem {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.heroImagem img {
+    height: 400px;
+    object-fit: contain;
+    display: block;
+    transform: translateX(110%);
+    opacity: 0;
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.5s ease,
+                height 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, height, opacity;
+}
+
+.magoGrande .heroImagem {
+    z-index: 60;
+}
+
+.magoGrande .heroImagem img {
+    transform: translateX(0);
+    opacity: 1;
+    height: min(90vh, 780px);
+}
+
+.magoPequeno .heroImagem {
+    z-index: 5;
+}
+
+.magoPequeno .heroImagem img {
+    transform: translateX(0);
+    opacity: 1;
+    height: 400px;
+}
+
+  /* BALÃO DE DIÁLOGO */
+.dialogoMago {
+    position: fixed;
+    right: 24vw;
+    bottom: clamp(10px, 4vh, 40px);
+    z-index: 70;
+    display: none;
+}
+
+.dialogoMago.visivel {
+    display: block;
+    animation: dialogoEntrar 0.2s steps(2) forwards;
+}
+
+@keyframes dialogoEntrar {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.dialogoFundo {
+    width: clamp(560px, 50vw, 860px);
+    height: auto;
+    display: block;
+}
+
+.dialogoConteudo {
+    position: absolute;
+    inset: 0;
+    padding: 46px 52px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    overflow: hidden;
+    gap: 6px;
+}
+
+.dialogoTexto {
+    font-family: 'Tiny5', sans-serif;
+    font-size: 26px;
+    color: #1e1028;
+    margin: 0;
+    line-height: 1.55;
+    white-space: pre-line;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.dialogoSeta {
+    flex-shrink: 0;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    pointer-events: auto;
+    transition: transform 0.1s steps(2);
+}
+
+.dialogoSeta:hover {
+    transform: translateX(5px);
+}
+
+.arrowIcone {
+    width: 40px;
+    height: auto;
+    display: block;
+}
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .logoPrisma { height: 70px; width: 70px; }
+    .letrasHeader { font-size: 17px; }
+    .paginasPrisma { gap: 22px; }
+    .heroTitulo { font-size: 2.6rem; }
+    .heroConteudo { gap: 16px; }
+    .magoGrande .heroImagem img { height: min(86vh, 650px); }
+    .dialogoFundo { width: clamp(460px, 52vw, 720px); }
+    .dialogoTexto { font-size: 22px; }
+    .dialogoConteudo { padding: 40px 44px 18px 42px; }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .logoPrisma { height: 54px; width: 54px; }
+    .letrasHeader { font-size: 14px; }
+    .paginasPrisma { gap: 14px; }
+    .headerPrisma { padding: 8px 20px; }
+    .heroSection { padding: 0 28px; }
+    .heroConteudo { max-width: 72%; gap: 14px; }
+    .heroTitulo { font-size: 1.9rem; }
+    .heroSubtitulo { font-size: 0.88rem; }
+    .heroBadges { gap: 16px; }
+    .badge { font-size: 0.85rem; }
+    .iconesBadge { width: 18px; height: 18px; }
+    .iconesBtn { width: 18px; height: 18px; }
+    .heroBtnTexto { padding: 10px 16px; font-size: 0.88rem; }
+    .heroImagem img { height: 260px; }
+    .magoGrande .heroImagem img { height: min(78vh, 500px); }
+    .magoPequeno .heroImagem img { height: 260px; }
+    .dialogoMago { right: auto; left: 12px; bottom: clamp(8px, 3vh, 30px); }
+    .dialogoFundo { width: min(86vw, 520px); }
+    .dialogoTexto { font-size: 17px; }
+    .dialogoConteudo { padding: 32px 34px 14px 32px; }
+    .arrowIcone { width: 30px; }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+    /* Header empilhado para caber todos os itens */
+    .headerPrisma {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px 14px;
+    }
+    .logoPrisma { height: 38px; width: 38px; }
+    .paginasPrisma { gap: 6px 12px; flex-wrap: wrap; }
+    .letrasHeader { font-size: 11px; }
+
+    /* Hero */
+    .heroSection { padding: 0 14px; }
+    .heroConteudo { max-width: 100%; gap: 10px; }
+    .heroTitulo { font-size: 1.3rem; }
+    .heroSubtitulo { font-size: 0.75rem; }
+    .heroBadges { gap: 8px; }
+    .badge { font-size: 0.72rem; }
+    .iconesBadge { width: 14px; height: 14px; }
+    .iconesBtn { width: 14px; height: 14px; }
+    .heroBtnTexto { padding: 8px 12px; font-size: 0.72rem; letter-spacing: 0.5px; }
+
+    /* Mago */
+    .heroImagem img { height: 185px; }
+    .magoGrande .heroImagem img { height: min(62vh, 320px); }
+    .magoPequeno .heroImagem img { height: 185px; }
+
+    /* Diálogo: posiciona abaixo do header, acima do mago */
+    .dialogoMago {
+        left: 10px;
+        right: auto;
+        bottom: auto;
+        top: 78px;
+    }
+    .dialogoFundo { width: calc(100vw - 20px); }
+    .dialogoTexto { font-size: 12px; line-height: 1.45; }
+    .dialogoConteudo { padding: 20px 20px 10px 20px; gap: 4px; }
+    .arrowIcone { width: 20px; }
+}
