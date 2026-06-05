@@ -1,0 +1,242 @@
+/* Reset padrão de margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0612;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container de proporção fixa do Figma (1440x1024) */
+.tela-container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    background-image: url('../imagens/quem_somos/fundo.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Renderização Pixel Art nítida para todas as imagens */
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+/* --- LOGO --- */
+.logo {
+    width: 150px;
+    height: 150px;
+    left: 48px;
+    top: 0px;
+    position: absolute;
+}
+
+/* --- ESTILO GERAL DOS LINKS DO MENU --- */
+.menu-item {
+    position: absolute;
+    top: 50px;
+    font-family: 'Tiny5', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-decoration: underline;
+    word-wrap: break-word;
+    transition: transform 0.1s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* --- CORES E POSIÇÕES DO MENU (DADOS DO DEV MODE) --- */
+.nav-inicio {
+    left: 406px;
+    top: 51px; 
+    color: #900DE7;
+    width: 111px;
+    height: 48px;
+}
+
+.nav-cursos {
+    left: 525px;
+    color: #a31f1f;
+}
+
+.nav-quem-somos {
+    left: 711px;
+    color: #cc7070;
+    width: 238px;
+    height: 50px;
+}
+
+.nav-depoimentos {
+    left: 968px;
+    color: #292cc0;
+}
+
+.nav-contatos {
+    left: 1237px;
+    color: #34e907;
+}
+
+.livro-bg{
+    width: 1396px;
+    height: 832px;
+    position: absolute;
+    top: 150px;
+    z-index: 4;
+}
+.texto1 {
+    width: 492px;
+    height: 112px;
+    left: 250px; 
+    top: 345px;  
+    position: absolute;
+    text-align: center;
+    color: #000000; 
+    font-size: 18px;
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    line-height: 0,9;
+    z-index: 5; 
+    text-align: justify;
+}
+.texto2 {
+    width: 492px;
+    height: 112px;
+    left: 745px; 
+    top: 345px;  
+    position: absolute;
+    text-align: center;
+    color: #000000; 
+    font-size: 18px;
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    line-height: 0,9;
+    z-index: 5; 
+    text-align: justify;
+}
+/* ==========================================================================
+   MÉTODO: NAVBAR NO TOPO (IGUAL AO DESKTOP) + LIVRO RESPONSIVO FLUIDO
+   ========================================================================= */
+@media (max-width: 1024px) {
+    /* 1. Ajusta o ecrã para ocupar 100% do visor do telemóvel */
+    html, body {
+        width: 100vw;
+        height: 100vh;
+        height: -webkit-fill-available;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0b0612;
+    }
+
+    /* 2. Força o container a preencher totalmente o ecrã sem transbordar */
+    .tela-container {
+        width: 100vw !important;
+        height: 100vh !important;
+        height: -webkit-fill-available !important;
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        background-image: url('../imagens/quem_somos/fundo.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        overflow: hidden !important;
+    }
+
+    /* 3. LOGO (Posicionado no topo esquerdo de forma compacta) */
+    .logo {
+        width: 45px !important;
+        height: 45px !important;
+        left: 3vw !important;
+        top: 15px !important;
+        transform: none !important;
+    }
+
+    /* 4. LINKS DO MENU (Alinhados na horizontal no topo - Idêntico à primeira página) */
+    .menu-item {
+        position: absolute !important;
+        top: 26px !important;
+        font-size: 3.2vw !important; /* Diminui proporcionalmente em ecrãs menores */
+        font-family: 'Tiny5', sans-serif !important;
+        width: auto !important;
+        height: auto !important;
+        text-align: left !important;
+        text-decoration: underline !important;
+    }
+
+    /* Distribuição matemática exata para manter o padrão visual */
+    .nav-inicio      { left: 17vw !important; }
+    .nav-cursos      { left: 29vw !important; }
+    .nav-quem-somos  { left: 42vw !important; }
+    .nav-depoimentos { left: 64vw !important; }
+    .nav-contatos    { left: 85vw !important; }
+
+    /* 5. LIVRO DE CONTEÚDO (Calculado mantendo a proporção pixel art original) */
+    .livro-bg {
+        width: 97vw !important;
+        height: 57.8vw !important; /* Proporção matemática perfeita do asset */
+        left: 1.5vw !important;
+        top: 110px !important;
+        position: absolute !important;
+        z-index: 4 !important;
+    }
+
+    /* 6. TEXTO DA PÁGINA ESQUERDA (Encaixado milimetricamente na página) */
+    .texto1 {
+        width: 34.16vw !important;
+        height: 36vw !important; /* Ocupa a altura útil da página do livro */
+        left: 17.36vw !important;
+        top: calc(110px + 13.96vw) !important; /* Alinhamento vertical perfeito dentro do livro */
+        position: absolute !important;
+        font-size: 1.7vw !important; /* Fonte fluida e perfeitamente legível no telemóvel */
+        font-family: 'Press Start 2P', monospace !important;
+        letter-spacing: 0px !important; /* Remove o espaçamento largo para não quebrar letras isoladas */
+        line-height: 1.4 !important;
+        text-align: justify !important;
+        color: #000000 !important;
+        overflow-y: auto !important; /* Adiciona rolagem interna mágica se o texto for longo */
+        z-index: 5 !important;
+        
+        /* Oculta as barras de rolagem nativas para manter a estética de jogo limpa */
+        scrollbar-width: none; 
+    }
+    .texto1::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 7. TEXTO DA PÁGINA DIREITA */
+    .texto2 {
+        width: 34.16vw !important;
+        height: 36vw !important;
+        left: 51.73vw !important;
+        top: calc(110px + 13.96vw) !important;
+        position: absolute !important;
+        font-size: 1.7vw !important;
+        font-family: 'Press Start 2P', monospace !important;
+        letter-spacing: 0px !important;
+        line-height: 1.4 !important;
+        text-align: justify !important;
+        color: #000000 !important;
+        overflow-y: auto !important;
+        z-index: 5 !important;
+        
+        scrollbar-width: none;
+    }
+    .texto2::-webkit-scrollbar {
+        display: none;
+    }
+}

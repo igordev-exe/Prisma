@@ -1,0 +1,267 @@
+/* Reset padrão de margens */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0612;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container de proporção fixa do Figma (1440x1024) */
+.tela-container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    background-image: url('../imagens/tela_inicial_cursos/fundo.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Renderização Pixel Art nítida para todas as imagens */
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+/* --- LOGO --- */
+.logo {
+    width: 150px;
+    height: 150px;
+    left: 48px;
+    top: 0px;
+    position: absolute;
+}
+
+/* --- ESTILO GERAL DOS LINKS DO MENU --- */
+.menu-item {
+    position: absolute;
+    top: 50px;
+    font-family: 'Tiny5', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-decoration: underline;
+    word-wrap: break-word;
+    transition: transform 0.1s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* --- CORES E POSIÇÕES DO MENU (DADOS DO DEV MODE) --- */
+.nav-inicio {
+    left: 406px;
+    top: 51px; 
+    color: #900DE7;
+    width: 111px;
+    height: 48px;
+}
+
+.nav-cursos {
+    left: 525px;
+    color: #a31f1f;
+}
+
+.nav-quem-somos {
+    left: 711px;
+    color: #cc7070;
+    width: 238px;
+    height: 50px;
+}
+
+.nav-depoimentos {
+    left: 968px;
+    color: #292cc0;
+}
+
+.nav-contatos {
+    left: 1237px;
+    color: #34e907;
+}
+
+/* --- BALÃO DE DIÁLOGO PRINCIPAL (FUNDO) --- */
+.balao-bg {
+    width: 595px;
+    height: 252px;
+    
+    left: 173px; 
+    top: 242px;  
+    position: absolute;
+    transform: rotate(0deg); 
+    z-index: 4;
+}
+
+/* --- TEXTO DENTRO DO BALÃO --- */
+.balao-texto {
+    width: 492px;
+    height: 112px;
+    left: 225px; 
+    top: 285px;  
+    position: absolute;
+    text-align: center;
+    color: #000000; 
+    font-size: 28px;
+    font-family: 'Press Start 2P', monospace;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    line-height: 1.2;
+    z-index: 5; 
+}
+
+/* --- BOLA DE CRISTAL --- */
+.bola-cristal {
+    width: 459px;
+    height: 459px;
+    left: 89px;
+    top: 531px;
+    position: absolute;
+}
+
+/* --- MAGO PYTHON --- */
+.mago-python {
+    width: 554px;
+    height: 554px;
+    left: 590px;
+    top: 415px;
+    position: absolute;
+}
+
+/* --- BALÃO INFERIOR DIREITO (LIVROS E SETA) --- */
+.balao-inferior {
+    width: 324px;
+    height: 173px;
+    left: 1116px;
+    top: 875px;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.balao-inferior:hover {
+    transform: translateY(-5px);
+}
+/* ==========================================================================
+   MÉTODO: NAVBAR NO TOPO (IGUAL AO DESKTOP) + LAYOUT FLUIDO FULL-SCREEN
+   ========================================================================= */
+@media (max-width: 1024px) {
+    /* 1. Ajusta o ecrã para ocupar 100% do visor do telemóvel */
+    html, body {
+        width: 100vw;
+        height: 100vh;
+        height: -webkit-fill-available;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0b0612;
+    }
+
+    /* 2. Força o container a preencher totalmente o ecrã */
+    .tela-container {
+        width: 100vw !important;
+        height: 100vh !important;
+        height: -webkit-fill-available !important;
+        position: relative !important;
+        left: 0 !important;
+        top: 0 !important;
+        transform: none !important;
+        background-image: url('../imagens/tela_inicial_cursos/fundo.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        overflow: hidden !important;
+    }
+
+    /* 3. LOGO (Posicionado no topo esquerdo de forma compacta) */
+    .logo {
+        width: 45px !important;
+        height: 45px !important;
+        left: 3vw !important;
+        top: 15px !important;
+        transform: none !important;
+    }
+
+    /* 4. LINKS DO MENU (Alinhados na horizontal no topo ao lado do logo) 
+       Usamos 'vw' no tamanho da fonte para que ela se autoajuste ao ecrã */
+    .menu-item {
+        position: absolute !important;
+        top: 26px !important;
+        font-size: 3.2vw !important; /* Diminui proporcionalmente em ecrãs menores */
+        font-family: 'Tiny5', sans-serif !important;
+        width: auto !important;
+        height: auto !important;
+        text-align: left !important;
+        text-decoration: underline !important;
+    }
+
+    /* Distribuição matemática exata para caber na largura de qualquer telemóvel */
+    .nav-inicio      { left: 17vw !important; }
+    .nav-cursos      { left: 29vw !important; }
+    .nav-quem-somos  { left: 42vw !important; }
+    .nav-depoimentos { left: 64vw !important; }
+    .nav-contatos    { left: 85vw !important; }
+
+    /* 5. BALÃO DE DIÁLOGO PRINCIPAL (Descido ligeiramente para não sobrepor o menu) */
+    .balao-bg {
+        width: 88% !important;
+        height: auto !important;
+        left: 6% !important;
+        top: 95px !important;
+        z-index: 4 !important;
+    }
+
+    /* Texto ajustado milimetricamente dentro do balão */
+    .balao-texto {
+        width: 76% !important;
+        height: auto !important;
+        left: 12% !important;
+        top: 115px !important;
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+        letter-spacing: 0px !important;
+        text-align: center !important;
+        z-index: 5 !important;
+    }
+
+    /* 6. COMPOSIÇÃO CENTRAL (Mago e Bola de Cristal ancorados perfeitamente na base livre) */
+    .mago-python {
+        width: 68vw !important;
+        height: 68vw !important;
+        max-width: 280px !important;
+        max-height: 280px !important;
+        left: 50% !important;
+        top: auto !important;
+        bottom: 45px !important;
+        transform: translateX(-30%) !important;
+        z-index: 2 !important;
+    }
+
+    .bola-cristal {
+        width: 55vw !important;
+        height: 55vw !important;
+        max-width: 230px !important;
+        max-height: 230px !important;
+        left: 48% !important;
+        top: auto !important;
+        bottom: 15px !important;
+        transform: translateX(-65%) !important;
+        z-index: 3 !important;
+    }
+
+    /* 7. SETA / BALÃO INFERIOR DIREITO */
+    .balao-inferior {
+        width: 110px !important;
+        height: auto !important;
+        left: auto !important;
+        right: 15px !important;
+        top: auto !important;
+        bottom: 25px !important;
+        z-index: 6 !important;
+    }
+}
