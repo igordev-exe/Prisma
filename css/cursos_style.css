@@ -1,0 +1,155 @@
+/* =========================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================= */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #0b0612;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+}
+
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   2. VERSÃO DESKTOP (Telas Grandes)
+   ========================================= */
+
+/* Por padrão, a versão mobile fica invisível no computador */
+.cursos {
+    display: none; 
+}
+
+/* Container do PC */
+.tela-container {
+    width: 1440px;
+    height: 1024px;
+    position: relative;
+    background-image: url('../imagens/cursos/fundo.png');
+    background-size: 1440px 1024px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: #0b0612;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    position: absolute;
+    top: 0px;
+    left: 48px;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    z-index: 10;
+}
+
+.painel-cursos {
+    position: absolute;
+    top: 128px;
+    left: 48px;
+    width: 1344px; 
+    height: 896px; 
+    object-fit: contain;
+    z-index: 5;
+}
+
+.menu-item {
+    position: absolute;
+    font-family: "Tiny5", sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    z-index: 10;
+    transition: transform 0.1s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+}
+
+/* Posições dos Links Desktop */
+.nav-inicio { top: 51px; left: 406px; background: linear-gradient(270deg, #900DE7 0%, #E3E3E3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration-color: #900DE7; }
+.nav-cursos { top: 50px; left: 525px; background: radial-gradient(50% 50% at 73% 50%, #CBC9C9 0%, #049C13 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration-color: #049C13; }
+.nav-quem-somos { top: 50px; left: 711px; background: linear-gradient(90deg, #FFFFFF 0%, #656262 50%, #EF1414 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration-color: #EF1414; }
+.nav-depoimentos { top: 50px; left: 968px; background: linear-gradient(90deg, #FFFFFF 0%, #1307FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration-color: #1307FF; }
+.nav-contatos { top: 50px; left: 1237px; background: linear-gradient(90deg, #FFFFFF 0%, #FBFF00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration-color: #FBFF00; }
+
+
+/* =========================================
+   3. VERSÃO MOBILE (Celulares e Tablets)
+   ========================================= */
+
+/* Ativado automaticamente quando a tela tiver 768px ou menos */
+@media screen and (max-width: 768px) {
+    
+    body {
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center; /* Centraliza a tela do celular */
+    }
+
+    /* Esconde a versão grande do PC */
+    .tela-container {
+        display: none;
+    }
+
+    /* Mostra a versão focada para celular */
+    .cursos {
+        display: block; 
+        position: relative;
+        width: 100%;
+        max-width: 390px;
+        height: 100vh; /* Altura 100% da tela */
+        background-color: #0b0612;
+        overflow-y: auto; 
+        overflow-x: hidden; 
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .cursos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cursos .rectangle {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .cursos .img {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        width: 48px;
+        height: auto;
+        z-index: 10;
+        cursor: pointer;
+        image-rendering: pixelated;
+        transition: transform 0.1s ease;
+    }
+
+    .cursos .img:active {
+        transform: scale(0.95);
+    }
+}
