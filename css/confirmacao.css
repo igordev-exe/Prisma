@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../imagens/fundo2-certo.png');
+    background-image: url('../imagens/confirmacao/fundo2-certo.png');
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -16,7 +16,7 @@ body {
 
 /* 2. MOBILE (Abaixo de 768px) */
 .plano-fundo {
-    background-image: url(../imagens/quadro-fundo2.png);
+    background-image: url(../imagens/confirmacao/quadro-fundo2.png);
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat;
