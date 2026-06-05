@@ -325,3 +325,87 @@ body {
     height: auto;
     display: block;
 }
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+/* Tablet landscape */
+@media (max-width: 1024px) {
+    .logoPrisma { height: 70px; width: 70px; }
+    .letrasHeader { font-size: 17px; }
+    .paginasPrisma { gap: 22px; }
+    .heroTitulo { font-size: 2.6rem; }
+    .heroConteudo { gap: 16px; }
+    .magoGrande .heroImagem img { height: min(86vh, 650px); }
+    .dialogoFundo { width: clamp(460px, 52vw, 720px); }
+    .dialogoTexto { font-size: 22px; }
+    .dialogoConteudo { padding: 40px 44px 18px 42px; }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+    .logoPrisma { height: 54px; width: 54px; }
+    .letrasHeader { font-size: 14px; }
+    .paginasPrisma { gap: 14px; }
+    .headerPrisma { padding: 8px 20px; }
+    .heroSection { padding: 0 28px; }
+    .heroConteudo { max-width: 72%; gap: 14px; }
+    .heroTitulo { font-size: 1.9rem; }
+    .heroSubtitulo { font-size: 0.88rem; }
+    .heroBadges { gap: 16px; }
+    .badge { font-size: 0.85rem; }
+    .iconesBadge { width: 18px; height: 18px; }
+    .iconesBtn { width: 18px; height: 18px; }
+    .heroBtnTexto { padding: 10px 16px; font-size: 0.88rem; }
+    .heroImagem img { height: 260px; }
+    .magoGrande .heroImagem img { height: min(78vh, 500px); }
+    .magoPequeno .heroImagem img { height: 260px; }
+    .dialogoMago { right: auto; left: 12px; bottom: clamp(8px, 3vh, 30px); }
+    .dialogoFundo { width: min(86vw, 520px); }
+    .dialogoTexto { font-size: 17px; }
+    .dialogoConteudo { padding: 32px 34px 14px 32px; }
+    .arrowIcone { width: 30px; }
+}
+
+/* Mobile */
+@media (max-width: 520px) {
+    /* Header empilhado para caber todos os itens */
+    .headerPrisma {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        padding: 8px 14px;
+    }
+    .logoPrisma { height: 38px; width: 38px; }
+    .paginasPrisma { gap: 6px 12px; flex-wrap: wrap; }
+    .letrasHeader { font-size: 11px; }
+
+    /* Hero */
+    .heroSection { padding: 0 14px; }
+    .heroConteudo { max-width: 100%; gap: 10px; }
+    .heroTitulo { font-size: 1.3rem; }
+    .heroSubtitulo { font-size: 0.75rem; }
+    .heroBadges { gap: 8px; }
+    .badge { font-size: 0.72rem; }
+    .iconesBadge { width: 14px; height: 14px; }
+    .iconesBtn { width: 14px; height: 14px; }
+    .heroBtnTexto { padding: 8px 12px; font-size: 0.72rem; letter-spacing: 0.5px; }
+
+    /* Mago */
+    .heroImagem img { height: 185px; }
+    .magoGrande .heroImagem img { height: min(62vh, 320px); }
+    .magoPequeno .heroImagem img { height: 185px; }
+
+    /* Diálogo: posiciona abaixo do header, acima do mago */
+    .dialogoMago {
+        left: 10px;
+        right: auto;
+        bottom: auto;
+        top: 78px;
+    }
+    .dialogoFundo { width: calc(100vw - 20px); }
+    .dialogoTexto { font-size: 12px; line-height: 1.45; }
+    .dialogoConteudo { padding: 20px 20px 10px 20px; gap: 4px; }
+    .arrowIcone { width: 20px; }
+}
