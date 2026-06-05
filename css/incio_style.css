@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     color: white;
     background-color: #151a28;
-    background-image: url('../assets/images/img_parede_castelo.jpg');
+    background-image: url('../imagens/img_parede_castelo.jpg');
     background-size: 100% 100%;
 }
 
