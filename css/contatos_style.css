@@ -1,112 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-body{
-
+body {
+    width: 100%;
+    height: 100vh;
     background-image: url('../imagens/contatos/Contatos.png');
-    background-size:100% 100%;
-    background-attachment: fixed;
-   border: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
 }
 
-.logo{
-    img{
-        width: 90px;
-        height: 90px;
-        position:fixed;
-        bottom:475px;
-        left:30px;
+img {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    gap: 40px;
+    padding-left: 20px;
+    z-index: 100;
+}
+
+.logo img {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+}
+
+.botoes {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.botoes img {
+    height: 35px;
+    width: auto;
+    transition: transform 0.2s;
+}
+
+.botoes img:hover {
+    transform: scale(1.1);
+}
+
+.caixas {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-40%);
+    width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    z-index: 10;
+}
+
+.caixas img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
+
+.personagens {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.personagens img {
+    height: 400px;
+    width: auto;
+    display: block;
+}
+
+.contate {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+}
+
+.contate img {
+    height: 70px;
+    width: auto;
+    display: block;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1440px) {
+    .header {
+        gap: 20px;
+        padding-left: 15px;
+        height: 70px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .botoes {
+        gap: 20px;
+    }
+
+    .botoes img {
+        height: 28px;
+    }
+
+    .caixas {
+        top: 100px;
+        width: 90%;
+        gap: 20px;
+    }
+
+    .personagens {
+        bottom: 0px;
+    }
+
+    .personagens img {
+        height: 400px;
+    }
+
+    .contate img {
+        height: 60px;
     }
 }
 
-.botoes{
-.inicio{
-      width:70px;
-      height:32px;
-      position:relative;
-      left:350px;
-      top:15px;
-}
-    .cursos{
-        width:100px;
-        height:27px;
-        position:relative;
-        left:390px;
-        top:15px;
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 15px 0;
     }
 
-    .quemsomos{
-        width:120px;
-        height:28px;
-        position:relative;
-        left:430px;
-        top:15px;
+    .botoes {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .depoimentos{
-        width:120px;
-        height:28px;
-        position:relative;
-        left:470px;
-        top:14px;
+    .botoes img {
+        height: 24px;
     }
 
-    .contatos{
-        width:120px;
-        height:26px;
-        position:relative;
-        left:510px;
-        top:15px;
-    }
-}
-
-.personagens{
-    img{
-        
-        width: 70%;
-        height: 450px;
-        position:fixed;
-        left: 170px;
-        top: 120px;
-    }
-}
-
-.contate{
-    img{
-        width:340px;
-        height:80px;
-        position:fixed;
-        left:430px;
-        top:400px;
-    }
-}
-
-.caixas{
-    .caixa2{
-
-        height:90px;
-        position:fixed;
-        left:100px;
-        top:230px;
+    .caixas {
+        top: 150px;
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .caixa{
-
-        height:90px;
-        position:fixed;
-        left:100px;
-        top:120px;
+    .personagens img {
+        height: 200px;
     }
 
-    .caixa3{
-        height:90px;
-        position:fixed;
-        left:670px;
-        top:120px;
-    }
-
-    .caixa4{
-        height:90px;
-        position:fixed;
-        left:670px;
-        top:230px;
+    .contate img {
+        height: 50px;
     }
 }

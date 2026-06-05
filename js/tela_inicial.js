@@ -37,6 +37,7 @@ function encerrarDialogo() {
     dialogoEl.classList.remove('visivel');
     containerPai.classList.remove('magoGrande');
     containerPai.classList.add('magoPequeno');
+    localStorage.setItem('animacaoMagoVista', '1');
 }
 
 proximoBtn.addEventListener('click', () => {
@@ -56,12 +57,15 @@ proximoBtn.addEventListener('click', () => {
     }
 });
 
-
-setTimeout(() => {
-    containerPai.classList.add('magoGrande');
-
+if (localStorage.getItem('animacaoMagoVista')) {
+    containerPai.classList.add('magoPequeno');
+} else {
     setTimeout(() => {
-        dialogoEl.classList.add('visivel');
-        mostrarDialogo(0);
-    }, 900);
-}, 1000);
+        containerPai.classList.add('magoGrande');
+
+        setTimeout(() => {
+            dialogoEl.classList.add('visivel');
+            mostrarDialogo(0);
+        }, 900);
+    }, 1000);
+}

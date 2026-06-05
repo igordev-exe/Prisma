@@ -21,9 +21,6 @@ body {
     background-size: 100% 100%;
 }
 
-/* ===========================
-   OVERLAY ESCURO
-   =========================== */
 .overlayDialogo {
     position: fixed;
     inset: 0;
@@ -38,9 +35,6 @@ body {
     opacity: 1;
 }
 
-/* ===========================
-   HEADER
-   =========================== */
 .headerPrisma {
     width: 100%;
     display: flex;
@@ -73,7 +67,6 @@ body {
     text-decoration: underline;
 }
 
-/* Inicio */
 .letrasHeader:nth-child(1) {
     background: linear-gradient(90deg, #900DE7, #E3E3E3);
     -webkit-background-clip: text;
@@ -81,7 +74,6 @@ body {
     background-clip: text;
 }
 
-/* Cursos */
 .letrasHeader:nth-child(2) {
     background: linear-gradient(90deg, #CBC9C9, #049C13);
     -webkit-background-clip: text;
@@ -89,7 +81,6 @@ body {
     background-clip: text;
 }
 
-/* Quem Somos  */
 .letrasHeader:nth-child(3) {
     background: linear-gradient(90deg, #FFFFFF, #656262, #EF1414);
     -webkit-background-clip: text;
@@ -97,7 +88,6 @@ body {
     background-clip: text;
 }
 
-/* Depoimentos */
 .letrasHeader:nth-child(4) {
     background: linear-gradient(90deg, #FFFFFF, #1307FF);
     -webkit-background-clip: text;
@@ -105,7 +95,6 @@ body {
     background-clip: text;
 }
 
-/* Contatos */
 .letrasHeader:nth-child(5) {
     background: linear-gradient(90deg, #FFFFFF, #FBFF00);
     -webkit-background-clip: text;
@@ -257,7 +246,6 @@ body {
     height: 400px;
 }
 
-  /* BALÃO DE DIÁLOGO */
 .dialogoMago {
     position: fixed;
     right: 24vw;

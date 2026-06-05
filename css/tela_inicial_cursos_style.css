@@ -1,4 +1,3 @@
-/* Reset padrão de margens */
 * {
     margin: 0;
     padding: 0;
@@ -9,43 +8,44 @@ body {
     background-color: #0b0612;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-/* Container de proporção fixa do Figma (1440x1024) */
 .tela-container {
-    width: 1440px;
-    height: 1024px;
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    aspect-ratio: 1440 / 1024;
     position: relative;
     background-image: url('../imagens/tela_inicial_cursos/fundo.png');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
 }
 
-/* Renderização Pixel Art nítida para todas as imagens */
 img {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
 }
-/* --- LOGO --- */
+
 .logo {
-    width: 150px;
-    height: 150px;
-    left: 48px;
-    top: 0px;
+    width: 10.42%;
+    height: auto;
+    left: 3.33%;
+    top: 0%;
     position: absolute;
 }
 
-/* --- ESTILO GERAL DOS LINKS DO MENU --- */
 .menu-item {
     position: absolute;
-    top: 50px;
+    top: 4.88%;
     font-family: 'Tiny5', sans-serif;
     font-weight: 400;
-    font-size: 40px;
+    font-size: clamp(14px, 2.78vw, 40px);
     text-decoration: underline;
     word-wrap: break-word;
     transition: transform 0.1s ease;
@@ -55,91 +55,83 @@ img {
     transform: scale(1.05);
 }
 
-/* --- CORES E POSIÇÕES DO MENU (DADOS DO DEV MODE) --- */
 .nav-inicio {
-    left: 406px;
-    top: 51px; 
+    left: 28.19%;
+    top: 4.98%;
     color: #900DE7;
-    width: 111px;
-    height: 48px;
+    width: auto;
+    height: auto;
 }
 
 .nav-cursos {
-    left: 525px;
+    left: 36.46%;
     color: #a31f1f;
 }
 
 .nav-quem-somos {
-    left: 711px;
+    left: 49.38%;
     color: #cc7070;
-    width: 238px;
-    height: 50px;
+    width: auto;
+    height: auto;
 }
 
 .nav-depoimentos {
-    left: 968px;
+    left: 67.22%;
     color: #292cc0;
 }
 
 .nav-contatos {
-    left: 1237px;
+    left: 85.90%;
     color: #34e907;
 }
 
-/* --- BALÃO DE DIÁLOGO PRINCIPAL (FUNDO) --- */
 .balao-bg {
-    width: 595px;
-    height: 252px;
-    
-    left: 173px; 
-    top: 242px;  
+    width: 41.32%;
+    height: auto;
+    left: 12.01%;
+    top: 23.63%;
     position: absolute;
-    transform: rotate(0deg); 
     z-index: 4;
 }
 
-/* --- TEXTO DENTRO DO BALÃO --- */
 .balao-texto {
-    width: 492px;
-    height: 112px;
-    left: 225px; 
-    top: 285px;  
+    width: 34.17%;
+    height: auto;
+    left: 15.63%;
+    top: 27.83%;
     position: absolute;
     text-align: center;
-    color: #000000; 
-    font-size: 28px;
+    color: #000000;
+    font-size: clamp(10px, 1.94vw, 28px);
     font-family: 'Press Start 2P', monospace;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     word-wrap: break-word;
     line-height: 1.2;
-    z-index: 5; 
+    z-index: 5;
 }
 
-/* --- BOLA DE CRISTAL --- */
 .bola-cristal {
-    width: 459px;
-    height: 459px;
-    left: 89px;
-    top: 531px;
+    width: 31.88%;
+    height: auto;
+    left: 6.18%;
+    top: 51.86%;
     position: absolute;
 }
 
-/* --- MAGO PYTHON --- */
 .mago-python {
-    width: 554px;
-    height: 554px;
-    left: 590px;
-    top: 415px;
+    width: 38.47%;
+    height: auto;
+    left: 40.97%;
+    top: 40.53%;
     position: absolute;
 }
 
-/* --- BALÃO INFERIOR DIREITO (LIVROS E SETA) --- */
 .balao-inferior {
-    width: 324px;
-    height: 173px;
-    left: 1116px;
-    top: 875px;
+    width: 22.5%;
+    height: auto;
+    left: 77.5%;
+    top: 85.45%;
     position: absolute;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -148,11 +140,11 @@ img {
 .balao-inferior:hover {
     transform: translateY(-5px);
 }
+
 /* ==========================================================================
-   MÉTODO: NAVBAR NO TOPO (IGUAL AO DESKTOP) + LAYOUT FLUIDO FULL-SCREEN
+   RESPONSIVO — TELAS ATÉ 1024px (tablets e celulares)
    ========================================================================= */
 @media (max-width: 1024px) {
-    /* 1. Ajusta o ecrã para ocupar 100% do visor do telemóvel */
     html, body {
         width: 100vw;
         height: 100vh;
@@ -163,60 +155,46 @@ img {
         background-color: #0b0612;
     }
 
-    /* 2. Força o container a preencher totalmente o ecrã */
     .tela-container {
         width: 100vw !important;
         height: 100vh !important;
         height: -webkit-fill-available !important;
-        position: relative !important;
-        left: 0 !important;
-        top: 0 !important;
-        transform: none !important;
-        background-image: url('../imagens/tela_inicial_cursos/fundo.png') !important;
+        max-width: none !important;
+        aspect-ratio: unset !important;
         background-size: cover !important;
         background-position: center !important;
         overflow: hidden !important;
     }
 
-    /* 3. LOGO (Posicionado no topo esquerdo de forma compacta) */
     .logo {
         width: 45px !important;
         height: 45px !important;
         left: 3vw !important;
         top: 15px !important;
-        transform: none !important;
     }
 
-    /* 4. LINKS DO MENU (Alinhados na horizontal no topo ao lado do logo) 
-       Usamos 'vw' no tamanho da fonte para que ela se autoajuste ao ecrã */
     .menu-item {
         position: absolute !important;
         top: 26px !important;
-        font-size: 3.2vw !important; /* Diminui proporcionalmente em ecrãs menores */
-        font-family: 'Tiny5', sans-serif !important;
+        font-size: 3.2vw !important;
         width: auto !important;
         height: auto !important;
-        text-align: left !important;
         text-decoration: underline !important;
     }
 
-    /* Distribuição matemática exata para caber na largura de qualquer telemóvel */
     .nav-inicio      { left: 17vw !important; }
     .nav-cursos      { left: 29vw !important; }
     .nav-quem-somos  { left: 42vw !important; }
     .nav-depoimentos { left: 64vw !important; }
     .nav-contatos    { left: 85vw !important; }
 
-    /* 5. BALÃO DE DIÁLOGO PRINCIPAL (Descido ligeiramente para não sobrepor o menu) */
     .balao-bg {
         width: 88% !important;
         height: auto !important;
         left: 6% !important;
         top: 95px !important;
-        z-index: 4 !important;
     }
 
-    /* Texto ajustado milimetricamente dentro do balão */
     .balao-texto {
         width: 76% !important;
         height: auto !important;
@@ -225,16 +203,12 @@ img {
         font-size: 11px !important;
         line-height: 1.4 !important;
         letter-spacing: 0px !important;
-        text-align: center !important;
-        z-index: 5 !important;
     }
 
-    /* 6. COMPOSIÇÃO CENTRAL (Mago e Bola de Cristal ancorados perfeitamente na base livre) */
     .mago-python {
         width: 68vw !important;
-        height: 68vw !important;
+        height: auto !important;
         max-width: 280px !important;
-        max-height: 280px !important;
         left: 50% !important;
         top: auto !important;
         bottom: 45px !important;
@@ -244,9 +218,8 @@ img {
 
     .bola-cristal {
         width: 55vw !important;
-        height: 55vw !important;
+        height: auto !important;
         max-width: 230px !important;
-        max-height: 230px !important;
         left: 48% !important;
         top: auto !important;
         bottom: 15px !important;
@@ -254,7 +227,6 @@ img {
         z-index: 3 !important;
     }
 
-    /* 7. SETA / BALÃO INFERIOR DIREITO */
     .balao-inferior {
         width: 110px !important;
         height: auto !important;
