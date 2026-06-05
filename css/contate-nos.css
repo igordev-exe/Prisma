@@ -1,0 +1,178 @@
+body{
+    background-image: url('../imagens/plano-fundo.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.divpai{
+    display: flex;
+    padding: 80px 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1{
+    font-size: 32px ;
+    color: #BFB8FF;
+    font-weight: 200;
+    font-family: 'Press Start 2p', cursive;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom:50px;
+    border-bottom: 3px solid #BFB8FF;
+    padding-bottom: 5px;
+    width: 450px;
+}
+
+.camponome {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.txtnome{ 
+    font-size: 20px;
+    font-family: 'Press Start 2p', cursive;
+    color:white;
+    margin: 0;
+   
+}
+
+.subtitulo{
+    color: white;
+    font-family: 'Press Start 2p', cursive;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+
+input{
+    background: transparent;
+    color: white;
+    border-radius: 2px;
+    border: 3px solid white;
+    width: 100%;
+    height: 56px;
+
+    font-size: 13px;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 29px;
+}
+
+
+
+textarea {
+    margin-top: 15px;
+    background: transparent;
+    color: white;
+    border-radius: 2px;
+    border: 3px solid white;
+    width: 100%;
+    height: 150px;
+    padding: 4px;
+    font-size: 13px;
+    font-family: 'Press Start 2P', cursive;
+    resize: none;
+}
+
+.botao{
+    margin-top: 34px;
+    border-radius: 5px;
+    background: #1FB530;
+    color: white;
+    width: 140px;
+    height: 50px;
+    font-family: 'Press Start 2P', cursive;
+
+}
+
+input:hover{
+    border-radius: 5px;
+}
+
+textarea:hover{
+    border-radius: 5px;
+}
+
+.botao:hover{
+    background-color: darkgreen; 
+}
+
+
+
+.plano-fundo{
+    background-image: url(../imagens/retangulo2.png);
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    padding-top: 280px;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.divisor{
+    margin-top: 25vh;
+    margin-bottom: 18px;
+    padding: 18px;
+    width: 25vh;
+    min-width: 200px;    
+    max-width: 330px; 
+}
+.letraenvio1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: medium;
+    font-weight: 300;
+    padding: 6px;
+    color: white;
+    margin: 0;
+    text-align: center;
+}
+.letraenvio2 {
+    color: #076228;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5vh;
+    margin: 0;
+    padding: 6px;
+    text-align: center;
+    
+}
+
+.divisor2{
+    margin-top: 5px;
+    width: 270px;
+    margin-bottom: 18px;
+    
+
+}
+
+.logo{
+    width: 15vw; 
+    min-width: 120px;
+    max-width: 250px;  
+    margin-top: 15px;
+
+
+
+}
+.seta{
+    width: 10px;
+    margin: 0;
+    padding: 0;
+
+}
