@@ -21,6 +21,26 @@ body {
     background-size: 100% 100%;
 }
 
+/* ===========================
+   OVERLAY ESCURO
+   =========================== */
+.overlayDialogo {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 3, 16, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    transition: opacity 0.5s ease;
+}
+
+.magoGrande .overlayDialogo {
+    opacity: 1;
+}
+
+/* ===========================
+   HEADER
+   =========================== */
 .headerPrisma {
     width: 100%;
     display: flex;
@@ -28,11 +48,13 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 30px;
+    position: relative;
+    z-index: 200;
 }
 
 .logoPrisma {
-    height: 70px;
-    width: 70px;
+    height: 88px;
+    width: 88px;
 }
 
 .paginasPrisma {
@@ -46,10 +68,49 @@ body {
 
 .letrasHeader {
     font-family: 'Tiny5', sans-serif;
-    font-size: 16px;
-    color: white;
+    font-size: 20px;
     cursor: pointer;
     text-decoration: underline;
+}
+
+/* Inicio */
+.letrasHeader:nth-child(1) {
+    background: linear-gradient(90deg, #900DE7, #E3E3E3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cursos */
+.letrasHeader:nth-child(2) {
+    background: linear-gradient(90deg, #CBC9C9, #049C13);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Quem Somos  */
+.letrasHeader:nth-child(3) {
+    background: linear-gradient(90deg, #FFFFFF, #656262, #EF1414);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Depoimentos */
+.letrasHeader:nth-child(4) {
+    background: linear-gradient(90deg, #FFFFFF, #1307FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Contatos */
+.letrasHeader:nth-child(5) {
+    background: linear-gradient(90deg, #FFFFFF, #FBFF00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .heroSection {
@@ -58,6 +119,7 @@ body {
     flex-direction: row;
     align-items: stretch;
     padding: 0 60px;
+    position: relative;
 }
 
 .heroConteudo {
@@ -67,6 +129,8 @@ body {
     justify-content: center;
     gap: 20px;
     max-width: 55%;
+    position: relative;
+    z-index: 2;
 }
 
 .heroTitulo {
@@ -152,15 +216,112 @@ body {
 }
 
 .heroImagem {
-    flex: 1;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
     display: flex;
-    justify-content: center;
     align-items: flex-end;
-    height: 100%;
+    pointer-events: none;
 }
 
 .heroImagem img {
     height: 400px;
     object-fit: contain;
-    margin-bottom: 60px;
+    display: block;
+    transform: translateX(110%);
+    opacity: 0;
+    transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.5s ease,
+                height 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, height, opacity;
+}
+
+.magoGrande .heroImagem {
+    z-index: 60;
+}
+
+.magoGrande .heroImagem img {
+    transform: translateX(0);
+    opacity: 1;
+    height: min(90vh, 780px);
+}
+
+.magoPequeno .heroImagem {
+    z-index: 5;
+}
+
+.magoPequeno .heroImagem img {
+    transform: translateX(0);
+    opacity: 1;
+    height: 400px;
+}
+
+  /* BALÃO DE DIÁLOGO */
+.dialogoMago {
+    position: fixed;
+    right: 24vw;
+    bottom: clamp(10px, 4vh, 40px);
+    z-index: 70;
+    display: none;
+}
+
+.dialogoMago.visivel {
+    display: block;
+    animation: dialogoEntrar 0.2s steps(2) forwards;
+}
+
+@keyframes dialogoEntrar {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.dialogoFundo {
+    width: clamp(560px, 50vw, 860px);
+    height: auto;
+    display: block;
+}
+
+.dialogoConteudo {
+    position: absolute;
+    inset: 0;
+    padding: 46px 52px 20px 48px;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    overflow: hidden;
+    gap: 6px;
+}
+
+.dialogoTexto {
+    font-family: 'Tiny5', sans-serif;
+    font-size: 26px;
+    color: #1e1028;
+    margin: 0;
+    line-height: 1.55;
+    white-space: pre-line;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.dialogoSeta {
+    flex-shrink: 0;
+    align-self: flex-end;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    pointer-events: auto;
+    transition: transform 0.1s steps(2);
+}
+
+.dialogoSeta:hover {
+    transform: translateX(5px);
+}
+
+.arrowIcone {
+    width: 40px;
+    height: auto;
+    display: block;
 }

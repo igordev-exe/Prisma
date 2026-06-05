@@ -12,6 +12,8 @@
   <body>
     <div id="containerPai">
 
+      <div class="overlayDialogo" id="overlayDialogo"></div>
+
       <header class="headerPrisma">
         <img src="assets/images/logoPrisma.svg" alt="Logo Prisma" class="logoPrisma">
         <nav>
@@ -48,10 +50,21 @@
           </button>
         </div>
         <div class="heroImagem">
-          <img src="assets/images/magoCajado.svg" alt="Mago Prisma">
+          <img src="assets/images/magoCajado.svg" alt="Mago Prisma" id="magoImg">
         </div>
       </main>
 
+      <div class="dialogoMago" id="dialogoMago">
+        <img src="assets/images/caixas_dialogo_img.svg" class="dialogoFundo" alt="">
+        <div class="dialogoConteudo">
+          <p class="dialogoTexto" id="dialogoTexto"></p>
+          <button class="dialogoSeta" id="dialogoProximo">
+            <img src="assets/images/arrow_caixaDialogo.svg" class="arrowIcone" alt="próximo">
+          </button>
+        </div>
+      </div>
+
     </div>
+    <script src="js/tela_inicial.js"></script>
   </body>
 </html>
