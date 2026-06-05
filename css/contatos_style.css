@@ -1,7 +1,7 @@
 
 body{
 
-    background-image: url("Contatos.png");
+    background-image: url('../imagens/contatos/Contatos.png');
     background-size:100% 100%;
     background-attachment: fixed;
    border: none;

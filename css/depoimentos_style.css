@@ -5,7 +5,7 @@
 
 body{
 
-    background-image: url("contatos.jpeg");
+    background-image: url('../imagens/depoimentos/contatos.jpeg');
     
     background-size: 100% 100%;
     background-attachment: fixed;
