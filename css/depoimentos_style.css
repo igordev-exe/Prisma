@@ -127,8 +127,15 @@ a {
     }
 
     .testemunhos {
-        top: 140px;
+        /* Aumentado de 140px para 230px para descer as caixas e liberar o menu */
+        top: 230px; 
         width: 95%;
-        gap: 10px;
+        gap: 15px;
+    }
+
+    /* Nova regra adicionada para deixar as caixas maiores APENAS no mobile */
+    .testemunhos img {
+        max-height: none; /* Remove o limite de altura da versão desktop */
+        width: 100%; /* Permite que a imagem ocupe toda a largura disponível */
     }
 }
